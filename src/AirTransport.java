@@ -1,9 +1,19 @@
-public class AirTransport extends Transport {
+public class AirTransport extends Transport implements Drivable{
     private String name;
     private String airline;
     private int passengerCapacity;
     private double fuelCapacity;
     private boolean isCommercial;
+    @Override
+    public void start() {
+        System.out.println("Light turned on");
+    }
+    public void drive(){
+        System.out.println("Start to take off");
+    }
+    public void stop(){
+        System.out.println("Lands");
+    }
 
     public AirTransport(String type, String brand, int year, double price, boolean isAvailable, String name, String airline, int passengerCapacity, double fuelCapacity, boolean isCommercial) {
         super(type, brand, year, price, isAvailable);

@@ -1,9 +1,11 @@
-public class Transport {
+public abstract class Transport {
     private String type;
     private String brand;
     private int year;
     private double price;
     private boolean isAvailable;
+
+    public abstract void start();
 
     public Transport(String type, String brand, int year, double price, boolean isAvailable) {
         this.type = type;

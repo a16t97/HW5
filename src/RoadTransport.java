@@ -1,12 +1,21 @@
-public class RoadTransport extends LandTransport{
+import javax.tools.Diagnostic;
+
+public class RoadTransport extends LandTransport implements Drivable {
     private int numOfDoors;
     private String color;
     private boolean isAutomatic;
     private double mileage;
-    private String fuelType;
+    private fuelType fuelType;
 
-    public RoadTransport(String type, String brand, int year, double price, boolean isAvailable, String name, String company, int seatingCapacity, boolean isDoubleDecker, int yearCreation, int numOfDoors, String color, boolean isAutomatic, double mileage, String fuelType) {
-        super(type, brand, year, price, isAvailable, name, company, seatingCapacity, isDoubleDecker, yearCreation);
+    public void drive(){
+        System.out.println("Start moving");
+    }
+    public void stop(){
+        System.out.println("Stop moving");
+    }
+
+    public RoadTransport(String type, String brand, int year, double price, boolean isAvailable, String name, String company, int seatingCapacity, boolean isDoubleDecker, int yearEnding, int numOfDoors, String color, boolean isAutomatic, double mileage, fuelType fuelType) {
+        super(type, brand, year, price, isAvailable, name, company, seatingCapacity, isDoubleDecker, yearEnding);
         this.numOfDoors = numOfDoors;
         this.color = color;
         this.isAutomatic = isAutomatic;
@@ -46,11 +55,22 @@ public class RoadTransport extends LandTransport{
         this.mileage = mileage;
     }
 
-    public String getFuelType() {
+    public fuelType getFuelType() {
         return fuelType;
     }
 
-    public void setFuelType(String fuelType) {
+    public void setFuelType(fuelType fuelType) {
         this.fuelType = fuelType;
+    }
+
+    @Override
+    public String toString() {
+        return "RoadTransport{" +
+                "numOfDoors=" + numOfDoors +
+                ", color='" + color + '\'' +
+                ", isAutomatic=" + isAutomatic +
+                ", mileage=" + mileage +
+                ", fuelType=" + fuelType +
+                '}';
     }
 }

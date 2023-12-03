@@ -4,6 +4,10 @@ public class WaterTransport extends Transport{
     private int capacity;
     private boolean cruiseShip;
     private int yearEnding;
+    @Override
+    public void start() {
+        System.out.println("Smoke came from the steamer");
+    }
 
     public WaterTransport(String type, String brand, int year, double price, boolean isAvailable, String name, int weight, int capacity, boolean cruiseShip, int yearEnding) {
         super(type, brand, year, price, isAvailable);

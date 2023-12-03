@@ -4,6 +4,11 @@ public class LandTransport extends Transport{
     private int seatingCapacity;
     private boolean isDoubleDecker;
     private int yearEnding;
+    @Override
+    public void start() {
+        System.out.println("Car started");
+    }
+
 
     public LandTransport(String type, String brand, int year, double price, boolean isAvailable, String name, String company, int seatingCapacity, boolean isDoubleDecker, int yearEnding) {
         super(type, brand, year, price, isAvailable);
@@ -52,5 +57,16 @@ public class LandTransport extends Transport{
 
     public void setYearEnding(int yearEnding) {
         this.yearEnding = yearEnding;
+    }
+
+    @Override
+    public String toString() {
+        return "LandTransport{" +
+                "name='" + name + '\'' +
+                ", company='" + company + '\'' +
+                ", seatingCapacity=" + seatingCapacity +
+                ", isDoubleDecker=" + isDoubleDecker +
+                ", yearEnding=" + yearEnding +
+                '}';
     }
 }
