@@ -3,5 +3,4 @@ public enum fuelType {
     diesel,
     petrol,
     electricity
-
 }
