@@ -1,4 +1,8 @@
-public class AirTransport extends Transport implements Drivable{
+package com.logistics.garage.transports;
+import com.logistics.garage.Transport;
+import com.logistics.garage.features.Drivable;
+
+public class AirTransport extends Transport implements Drivable {
     private String name;
     private String airline;
     private int passengerCapacity;
@@ -63,4 +67,5 @@ public class AirTransport extends Transport implements Drivable{
     public void setCommercial(boolean commercial) {
         isCommercial = commercial;
     }
+
 }

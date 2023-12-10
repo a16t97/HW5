@@ -1,3 +1,4 @@
+package com.logistics.garage;
 public abstract class Transport {
     private String type;
     private String brand;

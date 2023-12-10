@@ -1,3 +1,6 @@
+package com.logistics.garage.transports;
+import com.logistics.garage.Transport;
+
 public class LandTransport extends Transport{
     private String name;
     private String company;
@@ -61,7 +64,7 @@ public class LandTransport extends Transport{
 
     @Override
     public String toString() {
-        return "LandTransport{" +
+        return "com.logistics.garage.type.LandTransport{" +
                 "name='" + name + '\'' +
                 ", company='" + company + '\'' +
                 ", seatingCapacity=" + seatingCapacity +

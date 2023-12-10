@@ -1,3 +1,8 @@
+package com.logistics.garage.builders;
+
+import com.logistics.garage.list.fuelType;
+import com.logistics.garage.transports.types.RoadTransport;
+
 public class RoadTransportBuilder {
     private String type;
     private String brand;
@@ -13,7 +18,7 @@ public class RoadTransportBuilder {
     private String color;
     private boolean isAutomatic;
     private double mileage;
-    private fuelType fuelType;
+    private com.logistics.garage.list.fuelType fuelType;
 
     public RoadTransportBuilder setType(String type) {
         this.type = type;

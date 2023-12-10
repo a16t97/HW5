@@ -1,3 +1,6 @@
+package com.logistics.garage.transports;
+import com.logistics.garage.Transport;
+
 public class WaterTransport extends Transport{
     private String name;
     private int weight;
