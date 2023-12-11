@@ -69,12 +69,13 @@ public class RoadTransport extends LandTransport implements Drivable {
 
     @Override
     public String toString() {
-        return "com.logistics.garage.types.land.RoadTransport{" +
+        return "RoadTransport{" +
                 "numOfDoors=" + numOfDoors +
                 ", color='" + color + '\'' +
                 ", isAutomatic=" + isAutomatic +
                 ", mileage=" + mileage +
-                ", com.logistics.garage.fuel.fuelType=" + fuelType +
-                '}';
+                ", fuelType=" + fuelType +
+                "} :: " + super.toString();
     }
+
 }

@@ -60,4 +60,17 @@ public class WaterTransport extends Transport{
     public void setYearEnding(int yearEnding) {
         this.yearEnding = yearEnding;
     }
+
+    @Override
+    public String toString() {
+        final StringBuffer sb = new StringBuffer("WaterTransport{");
+        sb.append("name='").append(name).append('\'');
+        sb.append(", weight=").append(weight);
+        sb.append(", capacity=").append(capacity);
+        sb.append(", cruiseShip=").append(cruiseShip);
+        sb.append(", yearEnding=").append(yearEnding);
+        sb.append('}');
+        return sb.toString();
+    }
+
 }

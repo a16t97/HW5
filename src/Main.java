@@ -2,6 +2,7 @@ import com.logistics.garage.builders.RoadTransportBuilder;
 import com.logistics.garage.list.fuelType;
 import com.logistics.garage.transports.AirTransport;
 import com.logistics.garage.transports.LandTransport;
+import com.logistics.garage.transports.UndergroundTransport;
 import com.logistics.garage.transports.WaterTransport;
 
 // Press Shift twice to open the Search Everywhere dialog and type `show whitespaces`,
@@ -15,41 +16,21 @@ public class Main {
 //            }
 //        };
 
-        // Create a class object com.logistics.garage.type.AirTransport
+        // Create a class object AirTransport
         var plane = new AirTransport("plane", "boeing", 1996, 2055.50, true, "Victory", "AUI", 217, 2, true);
-        System.out.println("***com.logistics.garage.type.AirTransport");
-        System.out.println("Type: " + plane.getType());
-        System.out.println("Brand: " + plane.getBrand());
-        System.out.println("Year of creation: " + plane.getYear());
-        System.out.println("Price: " + plane.getPrice() + "$");
-        System.out.println("Available now: " + plane.isAvailable());
-        System.out.println("Name: " + plane.getName());
-        System.out.println("Airline: " + plane.getAirline());
-        System.out.println("Passenger capacity: " + plane.getPassengerCapacity());
-        System.out.println("Fuel tank capacity: " + plane.getFuelCapacity());
-        System.out.println("Commercial: " + plane.isCommercial());
+        System.out.println(plane); // the first way StringBuilder
         plane.start();
         plane.drive();
         plane.stop();
 
+        // Create a class object WaterTransport
         var vessel = new WaterTransport("ship", "Harland and Wolff", 1912, 7500000, false, "Titanic", 52310, 2439, true, 1912);
-        System.out.println(" "); //
-        System.out.println("***com.logistics.garage.type.WaterTransport");
-        System.out.println("Type of transport: " + vessel.getType());
-        System.out.println("Name: " + vessel.getName());
-        System.out.println("Producer: " + vessel.getBrand());
-        System.out.println("Year of creation: " + vessel.getYear());
-        System.out.println("Weight: " + vessel.getWeight());
-        System.out.println("Price: " + vessel.getPrice());
-        System.out.println("Available now: " + vessel.isAvailable());
-        System.out.println("Passenger capacity: " + vessel.getCapacity());
-        System.out.println("Cruise ship: " + vessel.isCruiseShip());
-        System.out.println("Year of decommissioning: " + vessel.getYearEnding());
+        System.out.println(" ");
+        System.out.println(vessel); // the second way StringBuffer
         vessel.start();
 
-        // com.logistics.garage.builders.RoadTransportBuilder
-        var bus = new LandTransport("bus", "Mercedes", 2001, 1500000, true, "London", "FlixBus", 54, false, 2032);
-        var buss = new RoadTransportBuilder()
+        // RoadTransportBuilder
+               var buss = new RoadTransportBuilder()
                 .setType("Bus")
                 .setBrand("Mercedes")
                 .setYear(2001)
@@ -66,34 +47,48 @@ public class Main {
                 .setMileage(216)
                 .setFuelType(fuelType.diesel)
                 .createRoadTransport();
-        System.out.println(buss.toString());
+        System.out.println(" "); // чтоб был отсуп в выводе
+        System.out.println(buss); // the third way (String concat(+) and super.toString())
         buss.start(); // abstract class
         buss.drive(); // interface
         buss.stop(); // interface
 
-        var microbus = new RoadTransportBuilder() // Это попытка посмотреть, что будет, если не все заполнить, это для меня.
-                .setType("micro")
-                .setBrand("Benz")
-                .setYear(2020)
-                .setFuelType(fuelType.naturalGas)
-                .createRoadTransport();
-        System.out.println(" ");
-        System.out.println(microbus.toString());
+        // Create a class object UndergroundTransport
+        var subway = new UndergroundTransport("subway","Intersity", 2007, 2000000, true, "ItaliaRail", 562, 9, "red", 7);
+        System.out.println(" "); // для отступа
+        System.out.println(subway); // the 4th way StringJoiner
+        subway.start(); // abstract class
+        subway.drive(); // interface
+        subway.stop(); // interface
 
-        System.out.println("Type of transport: " + bus.getType());
-        System.out.println("Brand: " + bus.getBrand());
-        System.out.println("Name: " + bus.getName());
-        System.out.println("Price: " + bus.getPrice() + "$");
-        System.out.println("Year of creation: " + bus.getYear());
-        System.out.println("Available now: " + bus.isAvailable());
-        System.out.println("Company: " + bus.getCompany());
-        System.out.println("Passenger capacity: " + bus.getSeatingCapacity());
-        System.out.println("Double Decker: " + bus.isDoubleDecker());
-        System.out.println("Year of decommissioning: " + bus.getYearEnding());
-        System.out.println("Number of doors: " + buss.getNumOfDoors());
-        System.out.println("Color: " + buss.getColor());
-        System.out.println("Automatic transmission: " + buss.isAutomatic());
-        System.out.println("Mileage: " + buss.getMileage() + " mil");
-        System.out.println("Type of fuel: " + buss.getFuelType());
+       // Create a class object LandTransport
+        var bus = new LandTransport("bus", "Mercedes", 2001, 1500000, true, "London", "FlixBus", 54, false, 2032);
+        System.out.println(" "); // для отступа
+        System.out.println(bus); // the 5th way (String concat(+))
+
+//        var microbus = new RoadTransportBuilder() // Это попытка посмотреть, что будет, если не все заполнить, это для меня.
+//                .setType("micro")
+//                .setBrand("Benz")
+//                .setYear(2020)
+//                .setFuelType(fuelType.naturalGas)
+//                .createRoadTransport();
+//        System.out.println(" ");
+//        System.out.println(microbus.toString());
+
+//        System.out.println("Type of transport: " + bus.getType());
+//        System.out.println("Brand: " + bus.getBrand());
+//        System.out.println("Name: " + bus.getName());
+//        System.out.println("Price: " + bus.getPrice() + "$");
+//        System.out.println("Year of creation: " + bus.getYear());
+//        System.out.println("Available now: " + bus.isAvailable());
+//        System.out.println("Company: " + bus.getCompany());
+//        System.out.println("Passenger capacity: " + bus.getSeatingCapacity());
+//        System.out.println("Double Decker: " + bus.isDoubleDecker());
+//        System.out.println("Year of decommissioning: " + bus.getYearEnding());
+//        System.out.println("Number of doors: " + buss.getNumOfDoors());
+//        System.out.println("Color: " + buss.getColor());
+//        System.out.println("Automatic transmission: " + buss.isAutomatic());
+//        System.out.println("Mileage: " + buss.getMileage() + " mil");
+//        System.out.println("Type of fuel: " + buss.getFuelType());
     }
 }

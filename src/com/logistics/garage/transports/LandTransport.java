@@ -64,7 +64,7 @@ public class LandTransport extends Transport{
 
     @Override
     public String toString() {
-        return "com.logistics.garage.type.LandTransport{" +
+        return "LandTransport{" +
                 "name='" + name + '\'' +
                 ", company='" + company + '\'' +
                 ", seatingCapacity=" + seatingCapacity +

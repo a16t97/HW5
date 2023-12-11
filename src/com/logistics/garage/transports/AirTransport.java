@@ -68,4 +68,15 @@ public class AirTransport extends Transport implements Drivable {
         isCommercial = commercial;
     }
 
+    @Override
+    public String toString() {
+        final StringBuilder sb = new StringBuilder("AirTransport{");
+        sb.append("name='").append(name).append('\'');
+        sb.append(", airline='").append(airline).append('\'');
+        sb.append(", passengerCapacity=").append(passengerCapacity);
+        sb.append(", fuelCapacity=").append(fuelCapacity);
+        sb.append(", isCommercial=").append(isCommercial);
+        sb.append('}');
+        return sb.toString();
+    }
 }
